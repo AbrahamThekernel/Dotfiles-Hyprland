@@ -1,0 +1,96 @@
+	@define-color base #eff1f5;
+	@define-color mantle #e6e9ef;
+	@define-color surface0 #bcc0cc;
+	@define-color text #4c4f69;
+
+	@define-color mauve #8839ef;
+	@define-color blue #1e66f5;
+	@define-color sky #04a5e5;
+	@define-color green #40a02b;
+	@define-color yellow #df8e1d;
+	@define-color red #d20f39;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+   window#waybar {
+    background: transparent;
+    border: none;
+}
+
+#workspaces,
+#window,
+#clock,
+#network,
+#bluetooth,
+#battery,
+#pulseaudio,
+#cpu,
+#memory,
+#temperature,
+#tray,
+#custom-power {
+    background: rgba(239, 241, 245, 0.75);
+    color: @text;
+    border: 1px solid alpha(@surface0, 0.5);
+
+    margin: 6px;
+    padding: 0 14px;
+
+    min-height: 28px;
+    border-radius: 14px;
+}
+
+label {
+    margin: 0;
+    padding: 0;
+}
+
+image {
+    margin: 0;
+    padding: 0;
+}
+
+#tray > widget {
+    margin: 0;
+    padding: 0 4px;
+}
+
+#workspaces button {
+    color: @blue;
+    padding: 0 10px;
+    margin: 2px;
+    border-radius: 10px;
+    transition: all 150ms;
+}
+
+#workspaces button.active {
+    background: @green;
+    color: @base;
+    border-radius: 20px;
+}
+
+#workspaces button:hover {
+    background: @mauve;
+}
+
+#clock {
+    color: @mauve;
+    font-weight: bold;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
+}

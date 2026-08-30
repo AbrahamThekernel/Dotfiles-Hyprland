@@ -1,0 +1,196 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "cpu",
+        "memory",
+        "temperature",
+        "network",
+        "pulseaudio",
+        "battery",
+        "battery#bat1",
+        "tray",
+        "custom/power"
+    ],
+
+    // =========================
+    // HYPRLAND
+    // =========================
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "urgent": ""
+        }
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 50
+    },
+
+    // =========================
+    // RELOJ
+    // =========================
+
+    "clock": {
+        "format": "  {:%H:%M}",
+        "format-alt": "  {:%d/%m/%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    // =========================
+    // CPU
+    // =========================
+
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": true,
+        "tooltip-format": "CPU: {usage}%"
+    },
+
+    // =========================
+    // MEMORIA RAM
+    // =========================
+
+    "memory": {
+        "format": "  {}%",
+        "tooltip": true,
+        "tooltip-format": "RAM: {}%"
+    },
+
+    // =========================
+    // TEMPERATURA CPU
+    // k10temp - Ryzen 5 PRO 2500U
+    // =========================
+
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
+        "critical-threshold": 80,
+        "format": "  {temperatureC}°C",
+        "format-critical": "  {temperatureC}°C"
+    },
+
+    // =========================
+    // RED
+    // =========================
+
+    "network": {
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": "󰈀  {ipaddr}",
+        "format-disconnected": "󰤮  Desconectado",
+        "tooltip-format": "{ifname}: {essid}\nIP: {ipaddr}"
+    },
+
+    // =========================
+    // AUDIO
+    // =========================
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰖁  Silenciado",
+        "format-bluetooth": "{volume}% {icon} ",
+
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+
+        "on-click": "pavucontrol"
+    },
+
+    // =========================
+    // BATERÍA PRINCIPAL
+    // BAT0 - SANYO
+    // =========================
+
+    "battery": {
+        "bat": "BAT0",
+
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-full": "{capacity}% 󰁹",
+
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+
+    // =========================
+    // SEGUNDA BATERÍA
+    // BAT1 - LGC
+    // =========================
+
+    "battery#bat1": {
+        "bat": "BAT1",
+
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+
+        "format": "{capacity}% 󰁹",
+        "format-charging": "{capacity}% 󰂄",
+        "format-full": "{capacity}% 󰁹"
+    },
+
+    // =========================
+    // BANDEJA DEL SISTEMA
+    // =========================
+
+    "tray": {
+        "spacing": 10
+    },
+
+    // =========================
+    // BOTÓN DE ENERGÍA
+    // Requiere wlogout
+    // =========================
+
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "wlogout"
+    }
+}

@@ -1,0 +1,85 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+   window#waybar {
+    background: transparent;
+    border: none;
+}
+
+#workspaces,
+#window,
+#clock,
+#network,
+#bluetooth,
+#battery,
+#pulseaudio,
+#cpu,
+#memory,
+#temperature,
+#tray,
+#custom-power {
+    background: rgba(46, 52, 64, 0.75);
+    color: #95d5b2;
+
+    margin: 6px;
+    padding: 0 14px;
+
+    min-height: 28px;
+    border-radius: 14px;
+    border: 1px solid rgba(129, 161, 193, 0.35);
+}
+
+label {
+    margin: 0;
+    padding: 0;
+}
+
+image {
+    margin: 0;
+    padding: 0;
+}
+
+#tray > widget {
+    margin: 0;
+    padding: 0 4px;
+}
+
+#workspaces button {
+    color: #90e0ef;
+    padding: 0 10px;
+    margin: 2px;
+    border-radius: 10px;
+    transition: all 150ms;
+}
+
+#workspaces button.active {
+    background: #99d98c;
+    color: #004b23;
+    border-radius: 20px;
+}
+
+#workspaces button:hover {
+    background: #52b788;
+}
+
+#clock {
+    color: #95d5b2;
+    font-weight: bold;
+}
+
+#battery.charging {
+    color: #95d5b2;
+}
+
+
+#battery.warning {
+    color: #EBCB8B;
+}
+
+#battery.critical {
+    color: #8F616A;
+}

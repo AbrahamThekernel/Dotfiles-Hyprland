@@ -1,0 +1,136 @@
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+
+@define-color text #cdd6f4;
+@define-color subtext1 #bac2de;
+@define-color subtext0 #a6adc8;
+
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
+
+/* Barra principal */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 15px;
+    font-weight: bold;
+    color: @text;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+
+/* Todos los módulos */
+#workspaces,
+#window,
+#clock,
+#network,
+#battery,
+#bluetooth,
+#tray {
+    background: @base;
+    border-radius: 18px;
+    padding: 0 12px;
+    margin: 5px 2px;
+    min-width: 55px;
+}
+
+
+/* Workspaces */
+#workspaces button {
+    color: @subtext0;
+    padding: 0 15px;
+    border-radius: 18px;
+}
+
+#workspaces button:hover {
+    background: @surface0;
+    color: @text;
+}
+
+#workspaces button.active {
+    background: @mauve;
+    color: @base;
+}
+
+
+/* Ventana actual */
+#window {
+    color: @lavender;
+}
+
+
+/* Reloj */
+#clock {
+    color: @mauve;
+}
+
+
+/* Red */
+#network {
+    color: @blue;
+    min-width: 50px;
+    padding: 0 25px;
+}
+#network * {
+    color: @sapphire;
+    padding: 0;
+    margin: 0;
+}
+
+/* Bluetooth */
+#bluetooth {
+    color: @sky;
+}
+#bluetooth.disabled {
+    color: @overlay0;
+}
+
+
+/* Batería */
+#battery {
+    color: @green;
+}
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+
+/* Bandeja */
+#tray {
+    color: @pink;
+}
+
+
+/* Tooltips */
+tooltip {
+    background: @mantle;
+    border-radius: 10px;
+    border: 1px solid @surface1;
+}
+
+tooltip label {
+    color: @text;
+}

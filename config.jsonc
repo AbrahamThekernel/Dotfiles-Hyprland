@@ -1,0 +1,78 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 8,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "network",
+        "battery",
+        "bluetooth",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "sort-by-number": true,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+
+    "hyprland/window": {
+        "max-length": 25,
+        "separate-outputs": true
+    },
+
+    "clock": {
+        "format": " {:%H:%M}",
+        "tooltip-format": "<big>{:%A %d %B %Y}</big>",
+        "format-alt": " {:%d/%m/%Y}"
+    },
+
+	"network": {
+	    "format-wifi": "  {signalStrength}%",
+	    "format-ethernet": "󰈀",
+	    "format-disconnected": "󰖪",
+	    "tooltip-format": false,
+	    "on-click": "/home/chivo/.local/bin/rofi-network-manager",
+	    "on-right-click": "/home/chivo/.local/bin/rofi-network-manager"
+	},
+    "bluetooth": {
+        "format": "",
+        "format-connected": " {num_connections}",
+        "format-disabled": "󰂲",
+        "tooltip": false,
+        "on-click": "blueman-manager"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
+        "on-click": "gnome-power-statistics"
+    },
+
+    "tray": {
+        "spacing": 8
+    }
+}
